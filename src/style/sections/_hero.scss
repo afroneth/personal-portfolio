@@ -1,26 +1,44 @@
+
 #hero {
   min-height: 100vh;
   height: 100vh;
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  /*background: $white-color;*/
+
+  background: url(../assets/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   font-weight: 400;
   color: $dark-blue-text;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: -1;
 
-  background: url(../src/assets/background.jpg);
-  background-position: center;
-  background-size: cover;
-
   @include respond(phone) {
     padding: 0rem $default-font-size;
+    background-attachment: scroll;
+  }
+
+  @include respond(phone-xs) {
+    background-attachment: initial;
+  }
+
+  @include respond(tab-land) {
+    background-attachment: initial;  
+  }
+
+  @include respond(tab-port) {
+    background-attachment: initial; 
   }
 
   .hero-title {
@@ -47,6 +65,7 @@
 
   .hero-cta {
     display: flex;
+    margin-bottom: 33rem;
 
     @include respond(tab-port) {
       justify-content: center;
